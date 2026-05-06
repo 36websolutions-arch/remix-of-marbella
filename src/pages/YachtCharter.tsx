@@ -48,14 +48,15 @@ import azimut39Gallery1 from "@/assets/yacht-azimut39-gallery-1.jpg";
 import azimut39Gallery2 from "@/assets/yacht-azimut39-gallery-2.jpg";
 import azimut39Gallery3 from "@/assets/yacht-azimut39-gallery-3.jpg";
 import azimut39Gallery4 from "@/assets/yacht-azimut39-gallery-4.jpg";
-import sunSeeker1 from "@/assets/yacht-sunseeker-gallery-1.jpg";
-import sunSeeker2 from "@/assets/yacht-sunseeker-gallery-2.jpg";
-import sunSeeker3 from "@/assets/yacht-sunseeker-gallery-3.jpg";
-import sunSeeker4 from "@/assets/yacht-sunseeker-gallery-4.jpg";
-import ferretti1 from "@/assets/ferretti-yachts-680-fly-1.jpg";
-import ferretti2 from "@/assets/ferretti-yachts-680-fly-2.jpg";
-import ferretti3 from "@/assets/ferretti-yachts-680-fly-3.jpg";
-
+import sunseekerPredator1 from "@/assets/yacht-sunseeker-predator-1.jpg";
+import sunseekerPredator2 from "@/assets/yacht-sunseeker-predator-2.jpg";
+import sunseekerPredator3 from "@/assets/yacht-sunseeker-predator-3.jpg";
+import sunseekerPredator4 from "@/assets/yacht-sunseeker-predator-4.jpg";
+import ferretti680_1 from "@/assets/yacht-ferretti-680-1.jpg";
+import ferretti680_2 from "@/assets/yacht-ferretti-680-2.jpg";
+import ferretti680_3 from "@/assets/yacht-ferretti-680-3.jpg";
+import deantonioD34_1 from "@/assets/yacht-deantonio-d34-1.png";
+import deantonioD34_2 from "@/assets/yacht-deantonio-d34-2.png";
 
 
 
@@ -93,6 +94,27 @@ const yachts = [
     minCharter: "4 hour minimum charter",
     jetSki: true,
     images: [foreverGallery1, foreverGallery2, foreverGallery3, foreverGallery4, foreverGallery5],
+    premium: true,
+  },
+  {
+    name: "FERRETTI YACHTS 680 FLY BRIDGE",
+    length: "23.00m",
+    capacity: "10 GUESTS (4 cabins / 8 guests sleeping)",
+    includes: ["Underwater Lights", "Sun Deck", "Wi-Fi", "Swimming Platform"],
+    price: "Starting From €2,800",
+    minCharter: "4 hour minimum charter",
+    images: [ferretti680_1, ferretti680_2, ferretti680_3],
+    premium: true,
+  },
+  {
+    name: "SUNSEEKER PREDATOR",
+    length: "22.00m",
+    capacity: "10 guests (4 cab) / 8 guests sleeping",
+    includes: ["Jet Ski", "Padel", "Jellyfish-Proof Pool", "Hydraulic Platform"],
+    price: "Starting From €2,500",
+    minCharter: "4 hour minimum charter",
+    jetSki: true,
+    images: [sunseekerPredator4, sunseekerPredator2, sunseekerPredator3],
     premium: true,
   },
   {
@@ -164,6 +186,14 @@ const yachts = [
     images: [yachtCranchi],
   },
   {
+    name: "DE ANTONIO YACHTS D34",
+    length: "10.47m",
+    capacity: "12 GUESTS (2 double cabins)",
+    includes: ["Paddleboard"],
+    price: "Starting From €650",
+    images: [deantonioD34_1, deantonioD34_2],
+  },
+  {
     name: "GOLDEN",
     length: "11.6m",
     capacity: "11 passengers",
@@ -179,25 +209,6 @@ const yachts = [
     includes: ["Captain", "Fuel", "Drinks", "Fishing Equipment"],
     price: "Starting From €550",
     images: [yachtMahiMahi],
-  },
-  
-    {
-    name: "SUNSEEKER PREDATOR",
-    length: "22,00m",
-    capacity: "10 guests (4 cab) / 8 guests sleeping)",
-    includes: ["JET SKI", "PADEL", "JELLYFISH-PROOF POOL", "HYDRAULIC PLATFORM"],
-    price: "Starting From €2,500",
-    images: [sunSeeker1, sunSeeker2, sunSeeker3, sunSeeker4],
-  },
-
-  {
-    name: "FERRETTI YACHTS 680 FLY BRIDGE",
-    length: "23,00m",
-    capacity: "10 GUESTS (4 cabins / 8 guests sleeping)",
-    includes: ["UNDERWATER LIGHTS", "SUN DECK", "WI-FI", "SWIMMING PLATFORM", "SUNPADS", "AIRCONDITIONING", "WAKEBOARD", "WATER SKI", "SNORKELLING EQUIPMENT", "PADDLEBOARD", "U-TUBE", "SEABOB 1 TWO-SEATER", "JET SKI", "SCUBA DIVE", "BANANA BOAT", "VIEW CATERING MENU"],
-    price: "Starting From €2,800",
-    images: [ferretti1, ferretti2, ferretti3],
-    premium: true,
   },
 ];
 

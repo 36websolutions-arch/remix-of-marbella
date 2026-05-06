@@ -103,6 +103,46 @@ import villaLaRosa5 from "@/assets/villa-la-rosa-5.jpg";
 import villaLaRosa6 from "@/assets/villa-la-rosa-6.jpg";
 import villaLaRosa7 from "@/assets/villa-la-rosa-7.jpg";
 import villaLaRosa8 from "@/assets/villa-la-rosa-8.jpg";
+import villaAlqueriaNew1 from "@/assets/villa-alqueria-new-1.png";
+import villaAlqueriaNew2 from "@/assets/villa-alqueria-new-2.png";
+import villaAlqueriaNew3 from "@/assets/villa-alqueria-new-3.png";
+import villaAlqueriaNew4 from "@/assets/villa-alqueria-new-4.png";
+import villaAlqueriaNew5 from "@/assets/villa-alqueria-new-5.png";
+import villaAlqueriaNew6 from "@/assets/villa-alqueria-new-6.png";
+import villaAlqueriaNew7 from "@/assets/villa-alqueria-new-7.png";
+import villaAlqueriaNew8 from "@/assets/villa-alqueria-new-8.png";
+import villaAlqueriaNew9 from "@/assets/villa-alqueria-new-9.png";
+import villaAlqueriaNew10 from "@/assets/villa-alqueria-new-10.png";
+import villaOlivos1 from "@/assets/villa-olivos-1.png";
+import villaOlivos2 from "@/assets/villa-olivos-2.png";
+import villaOlivos3 from "@/assets/villa-olivos-3.png";
+import villaOlivos4 from "@/assets/villa-olivos-4.png";
+import villaOlivos5 from "@/assets/villa-olivos-5.png";
+import villaOlivos6 from "@/assets/villa-olivos-6.png";
+import villaOlivos7 from "@/assets/villa-olivos-7.png";
+import villaOlivos8 from "@/assets/villa-olivos-8.png";
+import villaStella1 from "@/assets/villa-stella-1.png";
+import villaStella2 from "@/assets/villa-stella-2.png";
+import villaStella3 from "@/assets/villa-stella-3.png";
+import villaStella4 from "@/assets/villa-stella-4.png";
+import villaStella5 from "@/assets/villa-stella-5.png";
+import villaStella6 from "@/assets/villa-stella-6.png";
+import villaPhoenix1 from "@/assets/villa-phoenix-1.png";
+import villaPhoenix2 from "@/assets/villa-phoenix-2.png";
+import villaPhoenix3 from "@/assets/villa-phoenix-3.png";
+import villaPhoenix4 from "@/assets/villa-phoenix-4.png";
+import villaPhoenix5 from "@/assets/villa-phoenix-5.png";
+import villaPhoenix6 from "@/assets/villa-phoenix-6.png";
+import villaPhoenix7 from "@/assets/villa-phoenix-7.png";
+import villaPhoenix8 from "@/assets/villa-phoenix-8.png";
+import villaParaiso1 from "@/assets/villa-paraiso-1.png";
+import villaParaiso2 from "@/assets/villa-paraiso-2.png";
+import villaParaiso3 from "@/assets/villa-paraiso-3.png";
+import villaParaiso4 from "@/assets/villa-paraiso-4.png";
+import villaParaiso5 from "@/assets/villa-paraiso-5.png";
+import villaParaiso6 from "@/assets/villa-paraiso-6.png";
+import villaParaiso7 from "@/assets/villa-paraiso-7.png";
+import villaParaiso8 from "@/assets/villa-paraiso-8.png";
 
 const WHATSAPP_URL = "https://wa.me/34600250154?text=Hi%2C%20I%20would%20like%20to%20make%20a%20booking";
 const EMAIL = "Amorvipconcierge@gmail.com";
@@ -273,6 +313,76 @@ const villasData: Record<string, { name: string; description: string; images: st
       villaLaRosa6,
       villaLaRosa7,
       villaLaRosa8,
+    ],
+  },
+  "la-alqueria-benahavis": {
+    name: "La Alqueria, Benahavis",
+    description: "Benahavis, Spain\n\n5 Bedrooms · 5 Bathrooms · Sleeps up to 10\n\nBuilt: 600 m² · Terrace: 100 m² · Plot: 700 m²\n\nWelcome to your dream retreat in Benahavis, Spain - an exquisite luxury villa that promises an unforgettable stay. Set in a quiet but affluent community in the hills near Benahavis, this stunning villa offers everything you need for a truly indulgent stay. Boasting breathtaking panoramic views, you'll find yourself immersed in the beauty of the surrounding mountains and Mediterranean Sea. With five spacious bedrooms, this villa comfortably accommodates large groups or families seeking relaxation and luxury.\n\nStep inside and be greeted by a contemporary interior full of tasteful, top of the range furnishings and decor. The living areas are thoughtfully designed, offering ample space for entertaining and unwinding. Indulge in the ultimate leisure experience as you take a refreshing dip in the private pool or soak up the sun on the expansive terrace. Enjoy alfresco dining on the large terraces with stunning views.",
+    images: [
+      villaAlqueriaNew8,
+      villaAlqueriaNew1,
+      villaAlqueriaNew2,
+      villaAlqueriaNew3,
+      villaAlqueriaNew4,
+      villaAlqueriaNew5,
+      villaAlqueriaNew6,
+      villaAlqueriaNew7,
+      villaAlqueriaNew9,
+      villaAlqueriaNew10,
+    ],
+  },
+  "villa-los-olivos": {
+    name: "Villa Los Olivos",
+    description: "Nueva Andalucia, Marbella\n\n6 Bedrooms · 5 Bathrooms\n\nBuilt: 497 m² · Terrace: 315 m² · Plot: 1,264 m²\n\nVilla for rent in Nueva Andalucia, Marbella with 6 bedrooms and 5 bathrooms, with private swimming pool, private garage and private garden. Regarding property dimensions, it has 497 m² built, 1,264 m² plot and 315 m² terrace.\n\nHas the following facilities amenities near, transport near, air conditioning, fully furnished, fully fitted kitchen, utility room, marble floors, jacuzzi, satellite tv, basement, guest room, storage room, gym, alarm, solarium, security entrance, brand new, dining room, barbeque, security service 24h, guest toilet, private terrace, kitchen equipped, living room, country view, mountain view, automatic irrigation system, security shutters, laundry room, internet – wi-fi, covered terrace, 24h service, electric blinds, fitted wardrobes, gated community, garden …",
+    images: [
+      villaOlivos1,
+      villaOlivos2,
+      villaOlivos3,
+      villaOlivos4,
+      villaOlivos5,
+      villaOlivos6,
+      villaOlivos7,
+      villaOlivos8,
+    ],
+  },
+  "villa-stella": {
+    name: "Villa Stella",
+    description: "Villa in Marbella, Nueva Andalucia\n\n5 Bedrooms · 5 Bathrooms · 6 Beds · 11 Pax\n\nNestled in the heart of Nueva Andalucía, Marbella, Villa Stella offers a private and serene escape in one of the most exclusive and sought-after neighbourhoods on the Costa del Sol. The villa offers both tranquility and convenience. You are just a 10-minute walk from local shops, charming cafés, and fine dining restaurants, while the vibrant atmosphere of Puerto Banús and Marbella's golden beaches are only a short drive away. This idyllic location ensures that you are perfectly positioned to enjoy the best of Marbella's coastal lifestyle while retreating to the peace and privacy of your own luxury villa.\n\nThe Villa\n\nVilla Stella features five luxurious bedrooms, each with its own en-suite bathroom, ensuring privacy and comfort for all guests. The kitchen is fully equipped with high end appliances, making meal preparation effortless whether you're planning a quiet dinner or hosting friends. The villa also includes two spacious TV salons and an elegant dining area under vaulted ceilings, creating a perfect setting for both casual and formal gatherings. A separate guest bathroom and an additional poolside bathroom provide extra convenience.\n\nOutdoors, the villa offers a large private pool surrounded by a shaded lounge area, ideal for soaking up the sun or enjoying a drink in the evening breeze. The expansive terrace also features a BBQ setup and outdoor dining area, allowing you to enjoy alfresco meals while overlooking the beautifully landscaped gardens. The rooftop terrace provides breathtaking panoramic views of Marbella's skyline and the surrounding mountains, a perfect spot for sunset cocktails or stargazing.\n\nWellness and Entertainment\n\nFor those seeking relaxation and wellness, Villa Stella includes an impressive array of exclusive amenities. The villa features a fully equipped gym with top of the line Eleiko gear, allowing you to maintain your fitness routine during your stay. After a workout, unwind in the villa's private sauna or Turkish steam bath, or take a refreshing dip in the indoor cold pool for a complete spa experience.\n\nFor entertainment, the villa offers a variety of options to keep guests entertained. A basketball hoop and football goals are set within the villa's landscaped grounds, providing opportunities for fun and exercise. The pool table and two spacious TV lounges offer additional leisure options for family and friends.\n\nBedrooms and Bathrooms\n\nEach of the five bedrooms is a private retreat, offering modern elegance and comfort. Spacious and beautifully furnished, they are designed to provide a peaceful escape. The en-suite bathrooms are spa-like, with high end fixtures, sleek finishes, and indulgent touches like walk-in showers and soaking tubs. A separate guest bathroom and a poolside bathroom add convenience and comfort to your stay.\n\nSmart Technology and Security\n\nTo ensure your stay is as comfortable as it is secure, Villa Stella is equipped with a smart home system that allows you to control lighting, temperature, and security with ease. A high-tech security alarm system, air conditioning throughout, and floor heating provide both peace of mind and year-round comfort.\n\nThe Ultimate Luxury Escape\n\nCombining modern elegance with a tranquil setting, Villa Stella offers an unmatched luxury experience in the heart of Marbella. Whether you're unwinding by the pool, working out in the gym, or hosting a sunset dinner on the rooftop terrace, every element of this villa has been designed to elevate your stay. With its prime location, world-class amenities, and elegant design, Villa Stella is the perfect escape for those seeking privacy, comfort, and style on the Costa del Sol.",
+    images: [
+      villaStella1,
+      villaStella2,
+      villaStella3,
+      villaStella4,
+      villaStella5,
+      villaStella6,
+    ],
+  },
+  "villa-phoenix": {
+    name: "Villa Phoenix",
+    description: "Los Flamingos, Costa del Sol Golf Valley\n\nWelcome to Villa Phoenix, the ultracontemporary 5-star villa set in the natural beauty of Los Flamingos, a golf spot in the heart of Costa del Sol Golf Valley, close to Marbella & Puerto Banús (Spain). This avant-garde boutique rental home, finished to an extremely high quality, is provided with all the comfort and amenities, displaying unparalleled luxury.",
+    images: [
+      villaPhoenix1,
+      villaPhoenix2,
+      villaPhoenix3,
+      villaPhoenix4,
+      villaPhoenix5,
+      villaPhoenix6,
+      villaPhoenix7,
+      villaPhoenix8,
+    ],
+  },
+  "luxury-villa-el-paraiso": {
+    name: "Luxury Villa El Paraiso",
+    description: "1,495 m² · Garage · 6 Bedrooms · 8 Bathrooms\n\nFrom 25k per month\n\nAn exceptional luxury villa offering 1,495 m² of refined contemporary living, with a private garage, 6 spacious bedrooms and 8 bathrooms. Designed for the most discerning guests, the property combines striking modern architecture with sweeping views, expansive open-plan interiors, and seamless indoor-outdoor flow throughout. From the rooftop terrace and infinity pool to the private cinema room, elegant lounges, and serene bedrooms, every space has been crafted for unparalleled comfort and style on the Costa del Sol.",
+    images: [
+      villaParaiso1,
+      villaParaiso2,
+      villaParaiso3,
+      villaParaiso4,
+      villaParaiso5,
+      villaParaiso6,
+      villaParaiso7,
+      villaParaiso8,
     ],
   },
 };

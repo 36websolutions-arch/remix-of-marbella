@@ -116,6 +116,50 @@ import villaTropic7 from "@/assets/villa-tropic-7.png";
 import villaTropic8 from "@/assets/villa-tropic-8.png";
 import villaTropic9 from "@/assets/villa-tropic-9.png";
 import villaTropic10 from "@/assets/villa-tropic-10.png";
+import villaAlqueriaNew1 from "@/assets/villa-alqueria-new-1.png";
+import villaAlqueriaNew2 from "@/assets/villa-alqueria-new-2.png";
+import villaAlqueriaNew3 from "@/assets/villa-alqueria-new-3.png";
+import villaAlqueriaNew4 from "@/assets/villa-alqueria-new-4.png";
+import villaAlqueriaNew5 from "@/assets/villa-alqueria-new-5.png";
+import villaAlqueriaNew6 from "@/assets/villa-alqueria-new-6.png";
+import villaAlqueriaNew7 from "@/assets/villa-alqueria-new-7.png";
+import villaAlqueriaNew8 from "@/assets/villa-alqueria-new-8.png";
+import villaAlqueriaNew9 from "@/assets/villa-alqueria-new-9.png";
+import villaAlqueriaNew10 from "@/assets/villa-alqueria-new-10.png";
+import villaOlivosMain from "@/assets/villa-olivos-main.png";
+import villaOlivos1 from "@/assets/villa-olivos-1.png";
+import villaOlivos2 from "@/assets/villa-olivos-2.png";
+import villaOlivos3 from "@/assets/villa-olivos-3.png";
+import villaOlivos4 from "@/assets/villa-olivos-4.png";
+import villaOlivos5 from "@/assets/villa-olivos-5.png";
+import villaOlivos6 from "@/assets/villa-olivos-6.png";
+import villaOlivos7 from "@/assets/villa-olivos-7.png";
+import villaOlivos8 from "@/assets/villa-olivos-8.png";
+import villaStellaMain from "@/assets/villa-stella-main.png";
+import villaStella1 from "@/assets/villa-stella-1.png";
+import villaStella2 from "@/assets/villa-stella-2.png";
+import villaStella3 from "@/assets/villa-stella-3.png";
+import villaStella4 from "@/assets/villa-stella-4.png";
+import villaStella5 from "@/assets/villa-stella-5.png";
+import villaStella6 from "@/assets/villa-stella-6.png";
+import villaPhoenixMain from "@/assets/villa-phoenix-main.png";
+import villaPhoenix1 from "@/assets/villa-phoenix-1.png";
+import villaPhoenix2 from "@/assets/villa-phoenix-2.png";
+import villaPhoenix3 from "@/assets/villa-phoenix-3.png";
+import villaPhoenix4 from "@/assets/villa-phoenix-4.png";
+import villaPhoenix5 from "@/assets/villa-phoenix-5.png";
+import villaPhoenix6 from "@/assets/villa-phoenix-6.png";
+import villaPhoenix7 from "@/assets/villa-phoenix-7.png";
+import villaPhoenix8 from "@/assets/villa-phoenix-8.png";
+import villaParaisoMain from "@/assets/villa-paraiso-main.png";
+import villaParaiso1 from "@/assets/villa-paraiso-1.png";
+import villaParaiso2 from "@/assets/villa-paraiso-2.png";
+import villaParaiso3 from "@/assets/villa-paraiso-3.png";
+import villaParaiso4 from "@/assets/villa-paraiso-4.png";
+import villaParaiso5 from "@/assets/villa-paraiso-5.png";
+import villaParaiso6 from "@/assets/villa-paraiso-6.png";
+import villaParaiso7 from "@/assets/villa-paraiso-7.png";
+import villaParaiso8 from "@/assets/villa-paraiso-8.png";
 
 const WHATSAPP_URL = "https://wa.me/34600250154?text=Hi%2C%20I%20would%20like%20to%20make%20a%20booking";
 
@@ -219,6 +263,51 @@ const villas: Villa[] = [
     baths: 9,
     guests: 12,
     images: [villaMozart1, villaMozart2, villaMozart3, villaMozart4, villaMozart5, villaMozart6, villaMozart7, villaMozart8, villaMozart9],
+  },
+  {
+    name: "La Alqueria, Benahavis",
+    slug: "la-alqueria-benahavis",
+    description: "Welcome to your dream retreat in Benahavis, Spain - an exquisite luxury villa that promises an unforgettable stay. Set in a quiet but affluent community in the hills near Benahavis, this stunning villa offers everything you need for a truly indulgent stay. Boasting breathtaking panoramic views, you'll find yourself immersed in the beauty of the surrounding mountains and Mediterranean Sea. With five spacious bedrooms, this villa comfortably accommodates large groups or families seeking relaxation and luxury.\n\nStep inside and be greeted by a contemporary interior full of tasteful, top of the range furnishings and decor. The living areas are thoughtfully designed, offering ample space for entertaining and unwinding. Indulge in the ultimate leisure experience as you take a refreshing dip in the private pool or soak up the sun on the expansive terrace. Enjoy alfresco dining on the large terraces with stunning views.",
+    beds: 5,
+    baths: 5,
+    guests: 10,
+    images: [villaAlqueriaNew8, villaAlqueriaNew1, villaAlqueriaNew2, villaAlqueriaNew3, villaAlqueriaNew4, villaAlqueriaNew5, villaAlqueriaNew6, villaAlqueriaNew7, villaAlqueriaNew9, villaAlqueriaNew10],
+  },
+  {
+    name: "Villa Los Olivos",
+    slug: "villa-los-olivos",
+    description: "Villa for rent in Nueva Andalucia, Marbella with 6 bedrooms and 5 bathrooms, with private swimming pool, private garage and private garden. Regarding property dimensions, it has 497 m² built, 1,264 m² plot and 315 m² terrace. Has the following facilities amenities near, transport near, air conditioning, fully furnished, fully fitted kitchen, utility room, marble floors, jacuzzi, satellite tv, basement, guest room, storage room, gym, alarm, solarium, security entrance, brand new, dining room, barbeque, security service 24h, guest toilet, private terrace, kitchen equipped, living room, country view, mountain view, automatic irrigation system, security shutters, laundry room, internet – wi-fi, covered terrace, 24h service, electric blinds, fitted wardrobes, gated community, garden …",
+    beds: 6,
+    baths: 5,
+    guests: 12,
+    images: [villaOlivosMain, villaOlivos1, villaOlivos2, villaOlivos3, villaOlivos4, villaOlivos5, villaOlivos6, villaOlivos7, villaOlivos8],
+  },
+  {
+    name: "Villa Stella",
+    slug: "villa-stella",
+    description: "Nestled in the heart of Nueva Andalucía, Marbella, Villa Stella offers a private and serene escape in one of the most exclusive and sought-after neighbourhoods on the Costa del Sol. The villa offers both tranquility and convenience, just a 10-minute walk from local shops, charming cafés, and fine dining restaurants, while the vibrant atmosphere of Puerto Banús and Marbella's golden beaches are only a short drive away.",
+    beds: 5,
+    baths: 5,
+    guests: 11,
+    images: [villaStellaMain, villaStella1, villaStella2, villaStella3, villaStella4, villaStella5, villaStella6],
+  },
+  {
+    name: "Villa Phoenix",
+    slug: "villa-phoenix",
+    description: "Welcome to Villa Phoenix, the ultracontemporary 5-star villa set in the natural beauty of Los Flamingos, a golf spot in the heart of Costa del Sol Golf Valley, close to Marbella & Puerto Banús (Spain). This avant-garde boutique rental home, finished to an extremely high quality, is provided with all the comfort and amenities, displaying unparalleled luxury.",
+    beds: 8,
+    baths: 8,
+    guests: 16,
+    images: [villaPhoenixMain, villaPhoenix1, villaPhoenix2, villaPhoenix3, villaPhoenix4, villaPhoenix5, villaPhoenix6, villaPhoenix7, villaPhoenix8],
+  },
+  {
+    name: "Luxury Villa El Paraiso",
+    slug: "luxury-villa-el-paraiso",
+    description: "An exceptional luxury villa offering 1,495 m² of refined contemporary living, with a private garage, 6 spacious bedrooms and 8 bathrooms. Designed for the most discerning guests, the property combines striking modern architecture with sweeping views, expansive open-plan interiors, and seamless indoor-outdoor flow. Available from 25k per month.",
+    beds: 6,
+    baths: 8,
+    guests: 12,
+    images: [villaParaisoMain, villaParaiso1, villaParaiso2, villaParaiso3, villaParaiso4, villaParaiso5, villaParaiso6, villaParaiso7, villaParaiso8],
   },
 ];
 

@@ -3,10 +3,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import beachClubImg from "@/assets/service-beach-club.png";
-import yachtImg from "@/assets/service-yacht.png";
+import yachtImg from "@/assets/service-yacht.jpg";
 import nightclubImg from "@/assets/service-nightclub.png";
 import villaImg from "@/assets/service-villa.png";
-import carImg from "@/assets/car-hire-hero.jpg";
+import carImg from "@/assets/service-car-hire.jpg";
 
 
 import lifestyleImg from "@/assets/service-lifestyle-new.jpg";
