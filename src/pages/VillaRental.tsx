@@ -160,6 +160,7 @@ import villaParaiso5 from "@/assets/villa-paraiso-5.png";
 import villaParaiso6 from "@/assets/villa-paraiso-6.png";
 import villaParaiso7 from "@/assets/villa-paraiso-7.png";
 import villaParaiso8 from "@/assets/villa-paraiso-8.png";
+import ShareButton from "@/components/ShareButton";
 
 const WHATSAPP_URL = "https://wa.me/34600250154?text=Hi%2C%20I%20would%20like%20to%20make%20a%20booking";
 
@@ -386,6 +387,11 @@ function VillaCard({ villa, index }: { villa: Villa; index: number }) {
             <Eye className="w-4 h-4" />
             <span>See Details</span>
           </Link>
+          <ShareButton
+            path={`/villa-rental/${villa.slug}`}
+            label={villa.name}
+            variant="compact"
+          />
         </div>
       </div>
     </motion.div>

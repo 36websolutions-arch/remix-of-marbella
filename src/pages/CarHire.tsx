@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingButtons from "@/components/BookingButtons";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
+import ShareButton, { slugify } from "@/components/ShareButton";
 
 import carHireHero from "@/assets/car-hire-hero.jpg";
 import carMercedes from "@/assets/car-mercedes-gwagon.jpg";
@@ -76,12 +77,17 @@ const luxuryCars = [
     name: "Lamborghini Urus",
     images: [carLamboUrusNew],
   },
+  {
+    name: "Porsche 911 GT3 RS",
+    images: [carPorsche],
+  },
   // V Class last
   {
     name: "Mercedes V Class",
     images: [carVclassExterior, carVclassInterior, carVclassSteering],
   },
 ];
+
 
 function CarImageCarousel({ images, name }: { images: string[]; name: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -96,24 +102,31 @@ function CarImageCarousel({ images, name }: { images: string[]; name: string }) 
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  if (images.length === 1) {
+  const renderImage = (img: string, idx: number, extraClassName = "") => {
     return (
-      <img src={images[0]} alt={name} className="w-full h-full object-cover" />
+      <div key={idx} className={`relative w-full h-full ${extraClassName}`.trim()}>
+        <img
+          src={img}
+          alt={`${name} - Image ${idx + 1}`}
+          className="w-full h-full object-cover"
+        />
+      </div>
     );
+  };
+
+  if (images.length === 1) {
+    return renderImage(images[0], 0);
   }
 
   return (
     <div className="relative w-full h-full">
-      {images.map((img, idx) => (
-        <img
-          key={idx}
-          src={img}
-          alt={`${name} - Image ${idx + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover ${
-            idx === currentIndex ? "opacity-100 z-[1]" : "opacity-0 z-0"
-          }`}
-        />
-      ))}
+      {images.map((img, idx) =>
+        renderImage(
+          img,
+          idx,
+          `absolute inset-0 ${idx === currentIndex ? "opacity-100 z-[1]" : "opacity-0 z-0"}`,
+        ),
+      )}
       <button
         onClick={prevImage}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
@@ -154,16 +167,21 @@ function CarCard({ car, index }: { car: typeof luxuryCars[0]; index: number }) {
   return (
     <motion.div
       ref={ref}
+      id={`car-${slugify(car.name)}`}
       initial={{ opacity: 0, y: 60, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative bg-charcoal-light rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-500 h-full flex flex-col"
+      className="group relative bg-charcoal-light rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-500 h-full flex flex-col scroll-mt-24"
     >
+      <ShareButton
+        path={`/car-hire#car-${slugify(car.name)}`}
+        label={car.name}
+        className="absolute top-4 left-4 z-10"
+      />
       <div className="relative aspect-[16/10] overflow-hidden rounded-t-2xl">
         <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
           <CarImageCarousel images={car.images} name={car.name} />
         </div>
-        <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-primary/30 group-hover:border-primary transition-colors duration-300 z-[2]" />
       </div>
 
       <div className="p-6 flex flex-col flex-grow">

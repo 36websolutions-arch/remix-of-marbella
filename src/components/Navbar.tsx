@@ -6,7 +6,6 @@ import logo from "@/assets/logo-rectangular.png";
 
 const navLinks = [
   { href: "/#services", label: "Services" },
-  { href: "/#about", label: "Our Story" },
   { href: "/vip-x", label: "VIP Packages" },
   { href: "/#testimonials", label: "Testimonials" },
   { href: "/#faq", label: "FAQ" },

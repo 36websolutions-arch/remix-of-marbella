@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ChevronLeft, ChevronRight, MessageCircle, CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import BookingButtons from "@/components/BookingButtons";
+import ShareButton from "@/components/ShareButton";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
@@ -601,14 +602,16 @@ export default function VillaDetailPage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="flex items-center justify-between gap-4 mb-6"
           >
             <Link
               to="/villa-rental"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm tracking-wider uppercase">Back to Villas</span>
             </Link>
+            <ShareButton label={villa.name} variant="compact" />
           </motion.div>
 
           <motion.h1

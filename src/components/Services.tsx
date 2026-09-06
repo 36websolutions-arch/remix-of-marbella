@@ -59,9 +59,9 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       <img
         src={service.image}
         alt={service.title}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full scale-[1.03] object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+      <div className="absolute inset-0 scale-[1.03] bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
       
       <div className="absolute inset-0 flex flex-col justify-end p-6">
         <motion.h3
@@ -69,10 +69,14 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         >
           {service.title}
         </motion.h3>
-        <p className="text-foreground/70 text-sm leading-relaxed opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+        <p className="text-foreground/85 text-sm leading-snug line-clamp-2 transition-opacity duration-300">
           {service.description}
         </p>
-        <div className="h-0.5 w-0 bg-gradient-lime mt-4 group-hover:w-16 transition-all duration-500" />
+        <div className="mt-3 flex items-center gap-2 text-primary text-xs uppercase tracking-[0.2em] font-medium">
+          <span className="opacity-90 group-hover:opacity-100 transition-opacity duration-300">View service</span>
+          <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
+        </div>
+        <div className="h-0.5 w-8 bg-gradient-lime mt-4 group-hover:w-16 transition-all duration-500" />
       </div>
     </>
   );

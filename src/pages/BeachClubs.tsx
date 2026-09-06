@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import BookingButtons from "@/components/BookingButtons";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
 import HeroCarousel from "@/components/HeroCarousel";
+import ShareButton, { slugify } from "@/components/ShareButton";
 import heroImg from "@/assets/beach-clubs-hero.png";
 import naoHero from "@/assets/nao-hero.jpg";
 import oceanHero from "@/assets/ocean-club-hero.png";
@@ -80,11 +81,17 @@ function ClubCard({ club, index }: { club: typeof beachClubs[0]; index: number }
   return (
     <motion.div
       ref={ref}
+      id={`venue-${slugify(club.name)}`}
       initial={{ opacity: 0, y: 60, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative bg-charcoal-light rounded-2xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-500 h-full"
+      className="group relative bg-charcoal-light rounded-2xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-500 h-full scroll-mt-24"
     >
+      <ShareButton
+        path={club.link ?? `/beach-clubs#venue-${slugify(club.name)}`}
+        label={club.name}
+        className="absolute top-4 left-4 z-20"
+      />
       <div
         className="cursor-pointer"
         onClick={() => navigate(club.link)}
