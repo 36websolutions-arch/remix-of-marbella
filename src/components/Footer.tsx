@@ -6,8 +6,6 @@ import logo from "@/assets/logo-rectangular.png";
 const quickLinks = [
   { label: "Services", href: "/#services" },
   { label: "Our Story", href: "/#ourstory" },
-  { label: "Testimonials", href: "/#testimonials" },
-  { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -91,12 +89,18 @@ export default function Footer() {
             © {new Date().getFullYear()} Amor VIP Concierge. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-foreground/40 hover:text-primary text-sm transition-colors">
+            <Link
+              to="/privacy-policy"
+              className="text-foreground/40 hover:text-primary text-sm transition-colors"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="text-foreground/40 hover:text-primary text-sm transition-colors">
+            </Link>
+            <Link
+              to="/terms-of-service"
+              className="text-foreground/40 hover:text-primary text-sm transition-colors"
+            >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

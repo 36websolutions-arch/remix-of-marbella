@@ -25,6 +25,8 @@ import MomentoPage from "./pages/MomentoPage";
 import NewsCafePage from "./pages/NewsCafePage";
 import LifestyleManagement from "./pages/LifestyleManagement";
 import VipX from "./pages/VipX";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
@@ -62,6 +64,8 @@ const App = () => (
           <Route path="/nightclubs/news-cafe" element={<NewsCafePage />} />
           <Route path="/lifestyle-management" element={<LifestyleManagement />} />
           <Route path="/vip-x" element={<VipX />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

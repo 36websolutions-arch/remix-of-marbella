@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Anchor, Users, Ruler, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Clock3, Mail, MessageCircle, Users, Ruler, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingButtons from "@/components/BookingButtons";
@@ -67,6 +67,13 @@ import amanteStern from "@/assets/amante-yacht_stern_amante.jpg";
 import amanteToys from "@/assets/amante-yacht_with_watersports_toys.jpg";
 import amanteAerial from "@/assets/amante-aerial_yacht_watersports.jpg";
 import amanteDusk from "@/assets/amante-yacht_dusk_stern.jpg";
+import ferretti68_1 from "@/assets/yacht-ferretti68-4.jpg";
+import ferretti68_2 from "@/assets/yacht-ferretti68-1.jpg";
+import ferretti68_3 from "@/assets/yacht-ferretti68-3.jpg";
+import ferretti68_4 from "@/assets/yacht-ferretti68-5.jpg";
+import ferretti68_5 from "@/assets/yacht-ferretti68-6.jpg";
+import ferretti68_6 from "@/assets/yacht-ferretti68-2.jpg";
+import ferretti68_7 from "@/assets/yacht-ferretti68-7.jpg";
 
 
 
@@ -132,6 +139,17 @@ const yachts = [
     minCharter: "4 hour minimum charter",
     jetSki: true,
     images: [mangustaGallery1, mangustaGallery2, mangustaGallery3, mangustaGallery4],
+    premium: true,
+  },
+  {
+    name: "FERRETTI 68",
+    capacity: "12 passengers",
+    capacityHighlight: true,
+    includes: ["Captain & Crew", "Fuel", "Drinks", "Snacks", "Jet Ski"],
+    price: "Starting From €4,500",
+    minCharter: "4 hour minimum charter",
+    jetSki: true,
+    images: [ferretti68_1, ferretti68_2, ferretti68_3, ferretti68_4, ferretti68_5, ferretti68_6, ferretti68_7],
     premium: true,
   },
   {
@@ -279,19 +297,21 @@ function YachtImageCarousel({ images, name }: { images: string[]; name: string }
       <img
         src={images[0]}
         alt={name}
-        className="w-full h-full object-cover"
+        draggable={false}
+        className="w-full h-full object-cover select-none"
       />
     );
   }
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full select-none touch-pan-y [-webkit-tap-highlight-color:transparent]">
       {/* Preload all images and show/hide based on current index */}
       {images.map((img, idx) => (
         <img
           key={idx}
           src={img}
           alt={`${name} - Image ${idx + 1}`}
+          draggable={false}
           className={`absolute inset-0 w-full h-full object-cover ${
             idx === currentIndex ? "opacity-100 z-[1]" : "opacity-0 z-0"
           }`}
@@ -301,14 +321,14 @@ function YachtImageCarousel({ images, name }: { images: string[]; name: string }
       {/* Navigation Arrows */}
       <button
         onClick={prevImage}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         aria-label="Previous image"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         aria-label="Next image"
       >
         <ChevronRight className="w-5 h-5" />
@@ -316,20 +336,6 @@ function YachtImageCarousel({ images, name }: { images: string[]; name: string }
       
     </div>
   );
-}
-
-function includeIcon(item: string) {
-  const k = item.toLowerCase();
-  if (k.includes("captain")) return "👤";
-  if (k.includes("fuel")) return "⛽";
-  if (k.includes("dock")) return "⚓";
-  if (k.includes("jet")) return "🌊";
-  if (k.includes("paddle") || k.includes("snorkel") || k.includes("donut") || k.includes("sea bob") || k.includes("padel")) return "🏄";
-  if (k.includes("champagne") || k.includes("cava") || k.includes("wine") || k.includes("beer") || k.includes("drink")) return "🥂";
-  if (k.includes("snack") || k.includes("fruit") || k.includes("sandwich")) return "🍓";
-  if (k.includes("fish")) return "🎣";
-  if (k.includes("towel")) return "🧺";
-  return "✦";
 }
 
 function YachtCard({ yacht, index }: { yacht: typeof yachts[0]; index: number }) {
@@ -345,105 +351,110 @@ function YachtCard({ yacht, index }: { yacht: typeof yachts[0]; index: number })
     <motion.div
       ref={ref}
       id={`yacht-${slugify(yacht.name)}`}
-      initial={{ opacity: 0, y: 60, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative bg-charcoal-light rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 h-full flex flex-col overflow-hidden scroll-mt-24"
+      className="group relative bg-charcoal border border-border hover:border-primary/60 transition-colors duration-500 h-full flex flex-col overflow-hidden scroll-mt-24"
     >
       <ShareButton
         path={`/yacht-charter#yacht-${slugify(yacht.name)}`}
         label={yacht.name}
-        className="absolute top-4 right-4 z-10"
+        className="absolute top-4 left-4 z-20"
       />
       {/* Image */}
-      <div className="relative aspect-[3/2] overflow-hidden">
-        <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
+      <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+        <div className="w-full h-full transition-transform duration-700 group-hover:scale-[1.03]">
           <YachtImageCarousel images={yacht.images} name={yacht.name} />
         </div>
-        {/* Anchor divider */}
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-charcoal-light border border-primary/40 flex items-center justify-center z-[2]">
-          <Anchor className="w-5 h-5 text-primary" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent pointer-events-none z-[2]" />
+        <div className="absolute right-0 top-6 z-20 bg-background px-5 py-3 border-y border-l border-primary/30 text-left">
+          <span className="block text-[9px] uppercase tracking-[0.28em] text-foreground/50">From</span>
+          <span className="block text-lg font-semibold text-primary leading-tight">
+            {yacht.price.replace(/^Starting From\s*/i, "")}
+          </span>
         </div>
       </div>
 
-      <div className="px-5 pt-8 pb-5 flex flex-col flex-grow text-center">
+      <div className="relative px-5 sm:px-7 pt-7 pb-6 flex flex-col flex-grow text-center">
+        <div className="absolute top-0 left-7 right-7 h-px bg-primary/40" />
         {/* Name */}
-        <h3 className="font-display text-2xl md:text-3xl tracking-wide text-foreground">
+        <h3 className="font-sans text-2xl md:text-3xl font-light uppercase tracking-[0.12em] text-foreground leading-tight">
           {yacht.name}
         </h3>
 
-        {/* Subtitle with rules */}
-        <div className="flex items-center justify-center gap-3 mt-2 mb-4">
-          <span className="h-px w-8 bg-primary/50" />
-          <span className="text-primary tracking-[0.3em] uppercase text-[11px]">Private Yacht Charter</span>
-          <span className="h-px w-8 bg-primary/50" />
-        </div>
-
-
-
-
         {/* Specs */}
-        <div className="flex items-center justify-center gap-4 text-foreground/80 text-sm mb-4">
-          {yacht.length && (
-            <>
-              <div className="flex items-center gap-2">
-                <Ruler className="w-4 h-4 text-primary" />
-                <span>{yacht.length}</span>
-              </div>
-              <span className="text-primary/30">|</span>
-            </>
-          )}
-          <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-primary" />
-            <span>{yacht.capacity}</span>
+        <div className="grid grid-cols-3 py-6 mt-6 border-y border-border">
+          <div className="flex flex-col items-center justify-center gap-1 px-2">
+            <Ruler className="w-6 h-6 text-foreground mb-1" strokeWidth={1.5} />
+            <span className="text-sm font-semibold uppercase text-foreground">{yacht.length || "—"}</span>
+            <span className="text-[9px] uppercase tracking-[0.2em] text-foreground/45">Length</span>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-1 px-2 border-x border-border min-w-0">
+            <Users className="w-6 h-6 text-foreground mb-1" strokeWidth={1.5} />
+            <span className="text-xs sm:text-sm font-semibold uppercase text-foreground leading-tight line-clamp-2">{yacht.capacity}</span>
+            <span className="text-[9px] uppercase tracking-[0.2em] text-foreground/45">Guests</span>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-1 px-2">
+            <Clock3 className="w-6 h-6 text-foreground mb-1" strokeWidth={1.5} />
+            <span className="text-xs sm:text-sm font-semibold uppercase text-foreground leading-tight line-clamp-2">
+              {yacht.minCharter?.replace(/\s*minimum.*$/i, "") || "On request"}
+            </span>
+            <span className="text-[9px] uppercase tracking-[0.2em] text-foreground/45">Minimum</span>
           </div>
         </div>
 
-        {/* Details box */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 border border-primary/20 rounded-xl p-4 text-left flex-grow">
-          {/* Charter details */}
-          <div className="flex flex-col">
-            <div className="text-primary tracking-[0.25em] uppercase text-[11px] text-center mb-2">Charter Details</div>
-            <div className="h-px w-10 bg-primary/40 mx-auto mb-4" />
+        {/* Charter price */}
+        <div className="py-7 border-b border-border">
+          <span className="block text-[10px] uppercase tracking-[0.32em] text-foreground/70 mb-2">Private Yacht Charter</span>
+          <div className="flex items-end justify-center gap-4 flex-wrap">
+            <span className="text-3xl sm:text-4xl font-medium text-primary leading-none">
+              From {yacht.price.replace(/^Starting From\s*/i, "")}
+            </span>
             {yacht.minCharter && (
-              <div className="flex items-center gap-2 text-foreground/80 text-sm mb-4">
-                <span className="text-primary">⏱</span>
-                <span>{yacht.minCharter}</span>
-              </div>
+              <span className="text-xs uppercase tracking-[0.25em] text-foreground/70 pb-1">
+                {yacht.minCharter.replace(/\s*minimum charter/i, "")}
+              </span>
             )}
-            <div className="border-t border-primary/10 pt-3 mt-auto">
-              <div className="text-primary tracking-[0.25em] uppercase text-[10px] mb-1">From</div>
-              <div className="font-display text-2xl text-foreground leading-tight">
-                {yacht.price.replace(/^Starting From\s*/i, "")}
-              </div>
-              <p className="text-foreground/50 text-[11px] mt-2">All prices include IVA (VAT).</p>
-            </div>
           </div>
+        </div>
 
-          {/* Included */}
-          <div className="flex flex-col sm:border-l sm:border-primary/10 sm:pl-5">
-            <div className="text-primary tracking-[0.25em] uppercase text-[11px] text-center mb-2">Included</div>
-            <div className="h-px w-10 bg-primary/40 mx-auto mb-3" />
-            <ul className="space-y-1">
-              {includedItems.map((item, i) => (
-                <li
-                  key={item}
-                  className={`flex items-center gap-3 text-foreground/85 text-sm py-1 ${
-                    i < includedItems.length - 1 ? "border-b border-primary/10" : ""
-                  }`}
-                >
-                  <span className="text-primary text-base w-5 text-center">{includeIcon(item)}</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Included */}
+        <div className="py-6 flex-grow">
+          <div className="text-foreground tracking-[0.32em] uppercase text-[10px] mb-4">Included in your charter</div>
+          <ul className="flex flex-wrap justify-center gap-x-0 gap-y-2 text-xs sm:text-sm text-foreground/80 leading-relaxed">
+            {includedItems.map((item, i) => (
+              <li key={item} className="flex items-center">
+                <span className="px-2.5">{item}</span>
+                {i < includedItems.length - 1 && <span className="text-foreground/35">|</span>}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Contact */}
-        <div className="mt-5 pt-4 border-t border-primary/10">
-          <div className="text-primary tracking-[0.3em] uppercase text-[10px] mb-3">Contact Us</div>
-          <BookingButtons variant="compact" className="w-full" />
+        <div className="grid grid-cols-2 gap-3 mt-auto">
+          <a
+            href={`mailto:Amorvipconcierge@gmail.com?subject=${encodeURIComponent(`${yacht.name} charter enquiry`)}`}
+            className="min-h-12 inline-flex items-center justify-center gap-2 border border-primary text-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <Mail className="w-4 h-4 shrink-0" />
+            <span>Email enquiry</span>
+          </a>
+          <a
+            href={`https://wa.me/34600250154?text=${encodeURIComponent(`Hi, I would like to check availability for ${yacht.name}.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-12 inline-flex items-center justify-center gap-2 bg-gradient-lime text-primary-foreground text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] hover:brightness-110 transition-all"
+          >
+            <MessageCircle className="w-4 h-4 shrink-0" />
+            <span>Check availability</span>
+          </a>
+        </div>
+
+        <div className="flex items-center gap-4 mt-7 text-[9px] uppercase tracking-[0.3em] text-foreground/35">
+          <span className="h-px flex-1 bg-border" />
+          <span>Luxury Charters&nbsp;&nbsp;|&nbsp;&nbsp;Marbella</span>
+          <span className="h-px flex-1 bg-border" />
         </div>
       </div>
     </motion.div>

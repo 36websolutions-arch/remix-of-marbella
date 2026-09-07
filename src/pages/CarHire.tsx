@@ -9,38 +9,32 @@ import BookingButtons from "@/components/BookingButtons";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
 import ShareButton, { slugify } from "@/components/ShareButton";
 
-import carHireHero from "@/assets/car-hire-hero.jpg";
-import carMercedes from "@/assets/car-mercedes-gwagon.jpg";
-import carG63Interior from "@/assets/car-g63-interior.jpg";
-import carG63Rear from "@/assets/car-g63-rear.jpg";
-import carG63Front from "@/assets/car-g63-front.jpg";
-import carG63Seat from "@/assets/car-g63-seat.jpg";
-import carG63Steering from "@/assets/car-g63-steering.jpg";
-import carG63Black from "@/assets/car-g63-black.jpg";
-import carLamborghini from "@/assets/car-lamborghini-urus.jpg";
-import carLamboHuracanRear from "@/assets/car-lambo-huracan-rear.jpg";
-import carLamboHuracanSide from "@/assets/car-lambo-huracan-side.jpg";
-import carLamboHuracanFront from "@/assets/car-lambo-huracan-front.jpg";
-import carLamboHuracanInterior from "@/assets/car-lambo-huracan-interior.jpg";
-import carMclaren from "@/assets/car-mclaren-gt.jpg";
-import carPorsche from "@/assets/car-porsche-gt3.jpg";
-import carFerrari from "@/assets/car-ferrari-f8.jpg";
-import carFerrariRomaFront from "@/assets/car-ferrari-roma-front.jpg";
-import carFerrariRomaRear from "@/assets/car-ferrari-roma-rear.jpg";
-import carFerrariRomaInterior from "@/assets/car-ferrari-roma-interior.jpg";
-import carFerrari296Front from "@/assets/car-ferrari-296-front.jpg";
-import carFerrari296Side from "@/assets/car-ferrari-296-side.jpg";
-import carFerrari296Rear from "@/assets/car-ferrari-296-rear.jpg";
-import carLamboStoFront from "@/assets/car-lambo-sto-front.jpg";
-import carLamboStoSide from "@/assets/car-lambo-sto-side.jpg";
-import carLamboStoRear from "@/assets/car-lambo-sto-rear.jpg";
-import carVclassInterior from "@/assets/car-vclass-interior.jpg";
-import carVclassExterior from "@/assets/car-vclass-exterior.jpg";
-import carVclassSteering from "@/assets/car-vclass-steering.jpg";
-import carBrabusGwagon from "@/assets/car-brabus-gwagon.jpg";
-import carAudiRsq8 from "@/assets/car-audi-rsq8.jpg";
-import carLamboUrusNew from "@/assets/car-lambo-urus-new.jpg";
-import carRollsRoyce from "@/assets/car-rolls-royce.jpg";
+import carG63Interior from "@/assets/car-g63-interior.webp";
+import carG63Rear from "@/assets/car-g63-rear.webp";
+import carG63Front from "@/assets/car-g63-front.webp";
+import carG63Seat from "@/assets/car-g63-seat.webp";
+import carG63Steering from "@/assets/car-g63-steering.webp";
+import carG63Black from "@/assets/car-g63-black.webp";
+import carLamboHuracanRear from "@/assets/car-lambo-huracan-rear.webp";
+import carLamboHuracanSide from "@/assets/car-lambo-huracan-side.webp";
+import carLamboHuracanFront from "@/assets/car-lambo-huracan-front.webp";
+import carLamboHuracanInterior from "@/assets/car-lambo-huracan-interior.webp";
+import carPorsche from "@/assets/car-porsche-gt3.webp";
+import carFerrariRomaFront from "@/assets/car-ferrari-roma-front.webp";
+import carFerrariRomaRear from "@/assets/car-ferrari-roma-rear.webp";
+import carFerrariRomaInterior from "@/assets/car-ferrari-roma-interior.webp";
+import carFerrari296Front from "@/assets/car-ferrari-296-front.webp";
+import carFerrari296Side from "@/assets/car-ferrari-296-side.webp";
+import carFerrari296Rear from "@/assets/car-ferrari-296-rear.webp";
+import carLamboStoFront from "@/assets/car-lambo-sto-front.webp";
+import carLamboStoSide from "@/assets/car-lambo-sto-side.webp";
+import carLamboStoRear from "@/assets/car-lambo-sto-rear.webp";
+import carVclassInterior from "@/assets/car-vclass-interior.webp";
+import carVclassExterior from "@/assets/car-vclass-exterior.webp";
+import carVclassSteering from "@/assets/car-vclass-steering.webp";
+import carBrabusGwagon from "@/assets/car-brabus-gwagon.webp";
+import carAudiRsq8 from "@/assets/car-audi-rsq8.webp";
+import carLamboUrusNew from "@/assets/car-lambo-urus-new.webp";
 
 const luxuryCars = [
   // Sports cars first
@@ -91,6 +85,7 @@ const luxuryCars = [
 
 function CarImageCarousel({ images, name }: { images: string[]; name: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -102,31 +97,44 @@ function CarImageCarousel({ images, name }: { images: string[]; name: string }) 
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const renderImage = (img: string, idx: number, extraClassName = "") => {
-    return (
-      <div key={idx} className={`relative w-full h-full ${extraClassName}`.trim()}>
-        <img
-          src={img}
-          alt={`${name} - Image ${idx + 1}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    );
-  };
-
   if (images.length === 1) {
-    return renderImage(images[0], 0);
+    return (
+      <img
+        src={images[0]}
+        alt={name}
+        draggable={false}
+        loading="lazy"
+        decoding="async"
+        className="block h-full w-full select-none object-cover"
+      />
+    );
   }
 
   return (
-    <div className="relative w-full h-full">
-      {images.map((img, idx) =>
-        renderImage(
-          img,
-          idx,
-          `absolute inset-0 ${idx === currentIndex ? "opacity-100 z-[1]" : "opacity-0 z-0"}`,
-        ),
-      )}
+    <div
+      className="relative h-full w-full touch-pan-y select-none"
+      onTouchStart={(event) => {
+        touchStartX.current = event.touches[0]?.clientX ?? null;
+      }}
+      onTouchEnd={(event) => {
+        const startX = touchStartX.current;
+        const endX = event.changedTouches[0]?.clientX;
+        touchStartX.current = null;
+        if (startX === null || endX === undefined || Math.abs(startX - endX) < 40) return;
+        setCurrentIndex((prev) =>
+          startX > endX ? (prev + 1) % images.length : (prev - 1 + images.length) % images.length,
+        );
+      }}
+    >
+      <img
+        key={images[currentIndex]}
+        src={images[currentIndex]}
+        alt={`${name} - Image ${currentIndex + 1}`}
+        draggable={false}
+        loading="lazy"
+        decoding="async"
+        className="block h-full w-full object-cover"
+      />
       <button
         onClick={prevImage}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-background transition-colors z-10"
@@ -219,6 +227,7 @@ export default function CarHire() {
         <img
           src={carLamboStoFront}
           alt="Luxury Car Hire"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />

@@ -421,9 +421,6 @@ function VillaContactForm({ villaName }: { villaName: string }) {
           <h2 className="font-display text-2xl md:text-3xl mb-2 text-foreground text-center">
             Enquire About This <span className="text-gradient-lime">Villa</span>
           </h2>
-          <p className="text-foreground/60 text-center mb-2">
-            Fill out the form below and we'll get back to you shortly
-          </p>
           <p className="text-primary/80 text-center text-sm mb-8 italic">
             We work directly on behalf of our clients ensuring a seamless, hassle-free Marbella experience.
           </p>
